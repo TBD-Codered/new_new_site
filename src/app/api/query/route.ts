@@ -10,11 +10,12 @@ const chat_modifiers = [
   ]
 
 export const POST = async (request: any, context: any) => {
-  const { body } = context;
-  console.log(body);
+  const { params } = context;
+  const user_message = await request.text();
+
   const messages = [
     {role: "system", content: "You are a knowledgeable assistant about the University of Houston, providing information on admissions, programs, campus life, and more. Your responses should be consise, accurate, and helpful. Only provice information about the University of Houston and nothing else. If you're able to. Provide a link to relevant infomration on the offical univesity of houston's website." },
-    {role: "user", content: body.message }
+    {role: "user", content: user_message}
   ]
 
   for ( let modifier in chat_modifiers) { 
@@ -28,5 +29,5 @@ export const POST = async (request: any, context: any) => {
       model: 'gpt-3.5-turbo',
   });
 
-    return NextResponse.josoin(chatCompletion)
+    return NextResponse.json(chatCompletion)
 }

@@ -1,17 +1,9 @@
 import Image from "next/image";
 import styles from "./main.module.css"
-import OpenAI from 'openai';
 import { experimental_useFormStatus as useFormStatus } from 'react-dom';
 import NavButtons from "@/components/navbuttons";
 import { query_ai } from "@/lib/actions";
 
-const chat_modifiers = [
-    ["admissions","Focus on admission criteria, application process, and deadlines."],
-    ["programs","List and describe available academic programs, including undergraduate and graduate options."],
-    ["financial aid","Explain the financial aid process, types of aid available, and eligibility criteria"],
-    ["campus","Describe campus faciliities, student housing, and recreational opportunities."],
-    ["student life","Provide information on student organizations, events, and support services."],
-  ]
 
 export default function Home() {
  return (
@@ -27,13 +19,8 @@ export default function Home() {
         </div>
       </div>
       <div className={styles.main_content}>
-        <div className={styles.example_prompts}>
-          This is the acceptance
-        </div>
-        <form action={query_ai} className={styles.input_combo}>
-          <input name="message" type="text" className={styles.input_text} placeholder="Ask me anything about University of Houston"/>
-          <input type="button" className={styles.input_button}  value="Ask"/>
-        </form>
+       
+        
       </div>
     </div>
   );

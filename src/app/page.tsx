@@ -6,6 +6,7 @@ import styles from "./main.module.css"
 import { useState } from "react";
 import { query_ai } from "@/lib/actions";
 import NavButtons from "@/components/navbuttons";
+import ChatMessage from "@/components/chat_messages/chatmessages";
 
 export default function Home() {
   const [chatting, setChatting] = useState(false);
@@ -13,16 +14,17 @@ export default function Home() {
 
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
- 
+    setChatting(true);
     const formData = new FormData(event.currentTarget)
     const response = await fetch('/api/query', {
       method: 'POST',
-      body: formData,
+      body: formData.get('message'),
     })
  
     // Handle response if necessary
     const data = await response.json()
-    console.log(data);
+    setMessages([...chatMessages, formData.get('message'), data.choices[0].message.content]);
+    console.log(chatMessages);
   }
 
  return (
@@ -38,7 +40,7 @@ export default function Home() {
         </div>
       </div>
       <div className={styles.main_content}>
-        <div className={styles.example_prompts}>
+        <div className={styles.example_prompts} style={chatting? {display:"none"} : {}}>
           <button aria-hidden={chatting} className={styles.prompt_button}>
             <label>Popular Question</label>
             <p>Computer Science Degree plan at the University of Houston</p>
@@ -56,6 +58,7 @@ export default function Home() {
             <p>How do I contact the University Office of Admission?</p>
           </button>
         </div>
+        <ChatMessage messages={chatMessages}/>
         <form onSubmit={onSubmit} className={styles.input_combo}>
           <input name="message" type="text" className={styles.input_text} placeholder="Ask me anything about University of Houston"/>
           <input type="button" className={styles.input_button}  value="Ask"/>

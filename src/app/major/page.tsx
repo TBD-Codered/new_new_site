@@ -28,28 +28,8 @@ export default function Home() {
         </div>
       </div>
       <div className={styles.main_content}>
-        <div className={styles.example_prompts}>
-          <button className={styles.prompt_button}>
-            <label>Popular Question</label>
-            <p>Computer Science Degree plan at the University of Houston</p>
-          </button>
-          <button className={styles.prompt_button}>
-            <label>Popular Question</label>
-            <p>Tuition rates for in-state undergraduate student?</p>
-          </button>
-          <button className={styles.prompt_button}>
-            <label>Popular Question</label>
-            <p>How many social clubs at the University?</p>
-          </button>
-          <button className={styles.prompt_button}>
-            <label>Popular Question</label>
-            <p>How do I contact the University Office of Admission?</p>
-          </button>
-        </div>
-        <form action={query_ai} className={styles.input_combo}>
-          <input name="message" type="text" className={styles.input_text} placeholder="Ask me anything about University of Houston"/>
-          <input type="button" className={styles.input_button}  value="Ask"/>
-        </form>
+        
+        
       </div>
     </div>
   );
