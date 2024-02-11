@@ -1,43 +1,124 @@
+"use client"
 import Image from "next/image";
-import styles from "./main.module.css"
-import OpenAI from 'openai';
-import { experimental_useFormStatus as useFormStatus } from 'react-dom';
+import styles from "./main.module.css";
 import NavButtons from "@/components/navbuttons";
-import { query_ai } from "@/lib/actions";
+import { useState } from "react";
+import Modal from 'react-modal';
 
-const chat_modifiers = [
-    ["admissions","Focus on admission criteria, application process, and deadlines."],
-    ["programs","List and describe available academic programs, including undergraduate and graduate options."],
-    ["financial aid","Explain the financial aid process, types of aid available, and eligibility criteria"],
-    ["campus","Describe campus faciliities, student housing, and recreational opportunities."],
-    ["student life","Provide information on student organizations, events, and support services."],
-  ]
+
 
 export default function Home() {
+  const [showModal,setModal] = useState(false);
 
- return (
+  function show_disability_modal(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setModal(true);
+  }
+
+  function closeModal() {
+    setModal(false);
+  }
+
+  return (
     <div className={styles.container}>
+      <Modal
+  isOpen={showModal}
+  onRequestClose={closeModal}
+  contentLabel="Mobility Disability Information"
+  style={{
+    overlay: {
+      backgroundColor: 'rgba(0, 0, 0, 0.75)',
+      zIndex: 1000,'position': 'fixed',
+      'top': 0,
+      'left': 384,
+      'right': 100,
+      'bottom': 100,
+      'display': 'flex',
+      'align-items': 'center',
+      'width': '75%',
+      'height': '100%',
+    },
+    content: {
+      color: 'lightsteelblue', // This will change the text color
+      
+    },
+  }}
+>
+<button onClick={closeModal} style={{
+    position: 'absolute', 
+    top: '10px', // 
+    right: '50px',
+    background: 'none', 
+    fontSize: '2.5em',
+    color: 'red',
+  }}>X</button>
+  <header>
+        <h1 color="black"><center>Accessibility Resources & Navigation Guide</center></h1>
+    </header>
+    <main>
+        <section id="general-resources">
+            <h2><b>General Resources</b></h2>
+            <p>For students requiring assistance, we offer a range of services and resources tailored to accommodate various needs:</p>
+            <ul>
+                <li><a href="https://www.uh.edu/accessibility/">Justin Dart, Jr. Student Accessibility Center</a></li>
+                <li><a href="https://uh.edu/accessibility/accommodations/">Academic Accommodations</a></li>
+                <li><a href="https://uh.edu/accessibility/resources/campus-health-care/">On-Campus Healthcare</a></li>
+            </ul>
+            <div>.</div>
+            <h3>Health and Support Services</h3>
+            <ul>
+                <li>Student Health Center: (713) 743-5151</li>
+                <li>Counseling and Psychological Services: (713) 743-5454</li>
+                <li>Speech, Language, and Hearing Clinic: (713) 743-0915 or (713) 743-2898</li>
+                <li>University Eye Institute: (713) 743-2020</li>
+                <li><a href="https://uh.edu/accessibility/resources/off-campus-health-care/">Off-Campus Healthcare</a></li>
+            </ul>
+        </section>
+        <section id="navigation-parking">
+        <div>.</div>
+            <h2>Campus Navigation and Parking</h2>
+            <p>Find wheelchair-accessible locations, disability parking, ramps, and more through our detailed campus maps.</p>
+            <h3>Disability Parking and Access</h3>
+            <ul>
+                <li><a href="https://uh.edu/parking/_images/maps/visitor-parking-map_19-20.png">General Parking Information</a></li>
+                <li><a href="https://uh.edu/parking/accessible-parking/dvparking.php">Accessible Parking Details</a></li>
+            </ul>
+            <div>.</div>
+            <h3>Specific Route Information</h3>
+            <ul>
+                <li><a href="https://www.uh.edu/maps/#/find/SPG">Disability Parking Space Near Stadium (Stadium Parking Garage) 597</a></li>
+                <li><a href="https://www.uh.edu/maps/#/find/CRWC">Campus Recreation and Wellness Center 522</a></li>
+                <li><a href="https://www.uh.edu/maps/#/find/BKD">Burdette Keeland Jr. Design & Exploration Center</a></li>
+                <li><a href="https://www.uh.edu/maps/#/find/LOT19C">Student Parking near Law Building</a></li>
+            </ul>
+        </section>
+    </main>
+</Modal>
+  
       <div className={styles.background_image}> </div>
       <div className={styles.side_bar}>
         <div className={styles.project_info} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-          <Image src="/cougars4.png" width={200} height={200}/>
-
+        <a href="https://miniature-computing-machine-9vxj4gxjq3j4q-3000.app.github.dev/">
+          <Image alt="a" src="/cougars4.png" width={200} height={200}/>
+          </a>
         </div>
         <div className={styles.button_group}>
          <NavButtons/>
         </div>
       </div>
       <div className={styles.main_content}>
-        <div className={styles.example_prompts}>
+      <div className={styles.example_prompts}>
+        <form onSubmit={show_disability_modal} className="popup-content">
           <button className={styles.prompt_button}>
-            <label><b>Blindness Disability</b></label>
-            <p>Speech to Speech chat bot about University of Houston</p>
+            <label><b>Blindness disability</b></label>
+            <p>Speech to Speech University Information/Handicap Parking</p>
           </button>
           <button className={styles.prompt_button}>
             <label><b>Mobility Disability</b></label>
             <p>University Information/Handicap Parking/University resources</p>
           </button>
-        </div>
+        </form>
+      </div>
         
       </div>
     </div>

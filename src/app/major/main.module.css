@@ -3,7 +3,7 @@
   left:0;
   z-index:0;
   opacity: 35%;
-  background-image:url("https://uh.edu/landing-page-images/page-header-campus-life.jpg");
+  background-image:url("https://images.unsplash.com/photo-1591123120675-6f7f1aae0e5b?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
   width:100vw;
   height:100vh;
 }
@@ -19,7 +19,8 @@
   flex-direction:column;
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.77);
-  flex:3;
+  /* flex:3; */
+  width: 370px;
   z-index:2;
 }
 
@@ -30,35 +31,6 @@
   justify-content:center;
   z-index:2;
   flex:9;
-}
-.prompt_button {
-  position: relative;
-  padding: 20px;
-  background-color: rgba(182, 39, 39, 0.65);
-  color: white;
-  border-radius: 7px;
-  text-align: center;
-  cursor: pointer;
-  transition: 0.3s;
-  top: 20px;
-  font-family: 'Ubuntu', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', sans-serif;
-}
-
-.prompt_button::after {
-  content: "";
-  background-image: url("https://unblast.com/wp-content/uploads/2020/06/Grunge-Textures-1.jpg");
-  opacity: 0.2;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: absolute;
-  border-radius: 7px;
-  z-index: -1;
-}
-
-.prompt_button:hover {
-  background-color: rgba(182, 39, 39, 0.85);
 }
 
 .project_info{
@@ -76,60 +48,80 @@
   flex-direction: column;
   justify-content: center;
 }
-.example_prompts{
-  display:grid;
-  grid-template-columns: repeat(2,1fr);
-  grid-gap: 10px;
-  width: 80%;
-  max-width: 700px;
-  border-radius:5px;
+
+.card{
+  width: 500px;
+  height:300px;
   margin: auto;
+  background-color: rgba(125,125,125,1);
+  border-radius: 10px;
 }
-.input_combo{
-  margin-bottom: 20px;
-  margin-top: auto;
+.card_header{
+  height:50px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-sigze: 1.5em;
 }
-.input_text{
-  width: 80%;
-  padding:20px;
-    /*border-radius: 5px;*/
-    border: 1px solid #c3dff5;
-    margin: 0px 20px 20px 20px;
-  color : black;
+.card_body{
+  height:100px;
+  padding: 0px;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  gap: 10px;
+  
 }
-.input_button{
-  padding:21px;
-  background-color: rgb(166, 0, 0);
-    color: white;
-    /*border-radius: 5px;*/
-    text-align: center;
-    cursor: pointer;
-    transition: 0.3s;
-    margin: 0px 20px 300px 20px;
-  position: relative;
-    left: -39px;
+.card_footer{
+  height:50px;
+  background-color: #f9f9f9;
+  border-top: 1px solid #e0e0e0;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card_navigation_buttons{
+  display:flex;
+  flex-direction:row;
+  gap:50px;
+  align-items: center;
+  justify-content: center;
+}
 
+.card_button{
+  padding: 10px 20px;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
-.input_button:hover{
-  background-color: rgb(199, 5, 5);
+.card_button:hover {
+  background-color: #0056b3;
 }
 
-.button {
-  padding-left:20px;
-  border-radius:3px;
-  border: 1px solid #c3dff5;
-  padding:20px;
-  text-align: left;
-  margin: 0px 20px 20px 20px;
+.card_button_first{
+  margin-left: 20px; /* Adjusted from 350px */
+}
+.hide{
+  display:none;
+}
+
+.show {
+  
+}
+
+.centered{
+  margin:auto;
+}
+/* main.module.css */
+.title {
+  font-size: 2.5em;
+  color: #007bff;
   text-align: center;
-  font-size: 18px;
-  margin-top: -10px;
-  position: relative;
-    cursor: pointer;
-    transition: 0.3s;
-  top: 32px;
-}
-.button:hover {
-  background-color: rgba(182, 39, 39, 0.85);
-  color: white;
+  margin-top: 50px;
+  margin-bottom: -250px;
 }

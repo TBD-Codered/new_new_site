@@ -1,0 +1,50 @@
+.background_image {
+    position:fixed;
+    left:0;
+    z-index:0;
+    opacity: 35%;
+    background-image:url("https://uh.edu/landing-page-images/page-header-campus-life.jpg");
+    width:100vw;
+    height:100vh;
+  }
+  .container{
+    min-height: 100vh;
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+  }
+  
+  .side_bar{
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.77);
+    /* flex:3; */
+    width: 300px;
+    z-index:2;
+  }
+  
+  .main_content{
+    display:flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content:center;
+    z-index:2;
+    flex:9;
+  }
+  
+  .project_info{
+    margin-top:auto;
+    margin-bottom:0px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    text-align:center;
+  }
+  .button_group{
+    margin-top:50px;
+    margin-bottom: auto;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+  }
