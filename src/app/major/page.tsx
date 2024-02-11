@@ -2,6 +2,8 @@ import Image from "next/image";
 import styles from "./main.module.css"
 import OpenAI from 'openai';
 import { experimental_useFormStatus as useFormStatus } from 'react-dom';
+import NavButtons from "@/components/navbuttons";
+import { query_ai } from "@/lib/actions";
 
 const chat_modifiers = [
     ["admissions","Focus on admission criteria, application process, and deadlines."],
@@ -12,34 +14,6 @@ const chat_modifiers = [
   ]
 
 export default function Home() {
-  const is_pending = async (query) => {
-    'use server'
-    const { pending } = useFormStatus();
-
-    return pending;
-  }
-  const query_ai = async (query) => {
-    "use server"
-
-    const user_message = query.get('message');
-     
-    const messages = [
-      {role: "system", content: "You are a knowledgeable assistant about the University of Houston, providing information on admissions, programs, campus life, and more. Your responses should be consise, accurate, and helpful. Only provice information about the University of Houston and nothing else. If you're able to. Provide a link to relevant infomration on the offical univesity of houston's website." },
-      {role: "user", content: user_message }
-    ]
-    
-    for ( let modifier in chat_modifiers) { 
-      if (!user_message.toLowerCase().includes(chat_modifiers[modifier][0])) { continue; }
-      messages.splice(1,0,{role: "system", content: chat_modifiers[modifier][1]});
-    }
-    const openai = new OpenAI();
-    const chatCompletion = await openai.chat.completions.create({
-      messages: messages, 
-      model: 'gpt-3.5-turbo',
-    });
-    console.log(chatCompletion.choices[0].message.content);
-    return chatCompletion;
-  }
 
  return (
     <div className={styles.container}>
@@ -50,10 +24,7 @@ export default function Home() {
 
         </div>
         <div className={styles.button_group}>
-          <button className={styles.button}> AI Advisor Bot </button>
-          <button className={styles.button}> AI Disability Bot </button>
-          <button className={styles.button}> Help Me Pick The Major </button>
-          <button className={styles.button}> AI Acceptance Bot</button>
+          <NavButtons/>
         </div>
       </div>
       <div className={styles.main_content}>
