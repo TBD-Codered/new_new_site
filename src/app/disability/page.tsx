@@ -27,7 +27,7 @@ export default function Home() {
   contentLabel="Mobility Disability Information"
   style={{
     overlay: {
-      backgroundColor: 'rgba(0, 0, 0, 0.75)',
+      backgroundColor: 'rgba(0, 0, 0, 0.3)',
       zIndex: 1000,'position': 'fixed',
       'top': 0,
       'left': 384,
@@ -65,7 +65,7 @@ export default function Home() {
                 <li><a href="https://uh.edu/accessibility/resources/campus-health-care/">On-Campus Healthcare</a></li>
             </ul>
             <div>.</div>
-            <h3>Health and Support Services</h3>
+            <h2><b>Health and Support Services</b></h2>
             <ul>
                 <li>Student Health Center: (713) 743-5151</li>
                 <li>Counseling and Psychological Services: (713) 743-5454</li>
@@ -76,7 +76,7 @@ export default function Home() {
         </section>
         <section id="navigation-parking">
         <div>.</div>
-            <h2>Campus Navigation and Parking</h2>
+            <h2><b>Campus Navigation and Parking</b></h2>
             <p>Find wheelchair-accessible locations, disability parking, ramps, and more through our detailed campus maps.</p>
             <h3>Disability Parking and Access</h3>
             <ul>
@@ -84,7 +84,7 @@ export default function Home() {
                 <li><a href="https://uh.edu/parking/accessible-parking/dvparking.php">Accessible Parking Details</a></li>
             </ul>
             <div>.</div>
-            <h3>Specific Route Information</h3>
+            <h2><b>Specific Route Information</b></h2>
             <ul>
                 <li><a href="https://www.uh.edu/maps/#/find/SPG">Disability Parking Space Near Stadium (Stadium Parking Garage) 597</a></li>
                 <li><a href="https://www.uh.edu/maps/#/find/CRWC">Campus Recreation and Wellness Center 522</a></li>
