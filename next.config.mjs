@@ -2,7 +2,7 @@
 const nextConfig = {
   experimental: {
     serverActions: {
-      allowedOrigins: ['*.brandon-huu.com', 'localhost:8083'],
+      allowedOrigins: ['https://miniature-computing-machine-9vxj4gxjq3j4q-3000.app.github.dev/','*.brandon-huu.com', 'localhost:8083'],
     },
   },
   images:{

@@ -1,17 +1,19 @@
 .background_image {
-  position:fixed;
-  left:0;
-  z-index:0;
-  opacity: 35%;
-  background-image:url("https://uh.edu/landing-page-images/page-header-campus-life.jpg");
-  width:100vw;
-  height:100vh;
+  position: fixed;
+  left: 0;
+  z-index: 0;
+  opacity: 0.35; /* Updated opacity to decimal */
+  background-image: url("https://images.unsplash.com/photo-1619512673224-91cfb2688284?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  width: 100vw;
+  height: 100vh;
 }
-.container{
+
+.container {
   min-height: 100vh;
   display: flex;
-  flex-direction:row;
+  flex-direction: row;
   justify-content: center;
+  
 }
 
 .side_bar{
@@ -19,31 +21,33 @@
   flex-direction:column;
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.77);
-  flex:3;
+  width: 380px;
   z-index:2;
 }
 
-.main_content{
-  display:flex;
+.main_content {
+  display: flex;
   flex-direction: column;
   text-align: center;
-  justify-content:center;
-  z-index:2;
-  flex:9;
+  justify-content: center;
+  z-index: 0;
+  flex: 3; /* Adjusted for better responsiveness */
 }
+
 .prompt_button {
   position: relative;
   padding: 20px;
+  width: 300px; /* Set the width */
+  height: 150px; /* Set the height */
   background-color: rgba(182, 39, 39, 0.65);
   color: white;
   border-radius: 7px;
   text-align: center;
   cursor: pointer;
-  transition: 0.3s;
-  top: 20px;
-  font-family: 'Ubuntu', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', sans-serif;
+  transition: all 0.3s ease; /* Enhanced transition */
+  font-family: 'Ubuntu', sans-serif;
+  margin: 10px; /* This will add space around each button */
 }
-
 .prompt_button::after {
   content: "";
   background-image: url("https://unblast.com/wp-content/uploads/2020/06/Grunge-Textures-1.jpg");
@@ -58,78 +62,127 @@
 }
 
 .prompt_button:hover {
-  background-color: rgba(182, 39, 39, 0.85);
+  background-color: rgba(182, 39, 39, 0.85); /* Enhanced hover effect */
 }
 
-.project_info{
-  margin-top:auto;
-  margin-bottom:0px;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  text-align:center;
-}
-.button_group{
-  margin-top:50px;
-  margin-bottom: auto;
-  display:flex;
+.project_info, .button_group {
+  display: flex;
   flex-direction: column;
   justify-content: center;
+  text-align: center;
+  margin: auto;
 }
-.example_prompts{
-  display:grid;
-  grid-template-columns: repeat(2,1fr);
+
+.example_prompts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Improved responsiveness */
   grid-gap: 10px;
   width: 80%;
   max-width: 700px;
-  border-radius:5px;
+  border-radius: 5px;
   margin: auto;
 }
-.input_combo{
-  margin-bottom: 20px;
-  margin-top: auto;
-}
-.input_text{
+
+.input_combo, .input_text, .input_button {
   width: 80%;
-  padding:20px;
-    /*border-radius: 5px;*/
-    border: 1px solid #c3dff5;
-    margin: 0px 20px 20px 20px;
-  color : black;
+  padding: 20px;
+  border: 1px solid #0055ff;
+  margin: auto;
+  margin-bottom: 20px; /* Unified styling */
+  color: black;
+  transition: all 0.3s ease; /* Enhanced transition */
 }
-.input_button{
-  padding:21px;
+
+.input_button {
   background-color: rgb(166, 0, 0);
-    color: white;
-    /*border-radius: 5px;*/
-    text-align: center;
-    cursor: pointer;
-    transition: 0.3s;
-    margin: 0px 20px 300px 20px;
-  position: relative;
-    left: -39px;
-
-}
-.input_button:hover{
-  background-color: rgb(199, 5, 5);
-}
-
-.button {
-  padding-left:20px;
-  border-radius:3px;
-  border: 1px solid #c3dff5;
-  padding:20px;
-  text-align: left;
-  margin: 0px 20px 20px 20px;
-  text-align: center;
-  font-size: 18px;
-  margin-top: -10px;
-  position: relative;
-    cursor: pointer;
-    transition: 0.3s;
-  top: 32px;
-}
-.button:hover {
-  background-color: rgba(182, 39, 39, 0.85);
   color: white;
+  cursor: pointer;
+}
+
+.input_button:hover {
+  background-color: rgb(199, 5, 5); /* Enhanced hover effect */
+}
+
+.body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #002fff;
+}
+
+.header, .footer {
+  background-color: #003366;
+  color: white;
+  text-align: center;
+  padding: 1em;
+}
+
+.main {
+  padding: 20px;
+}
+
+.h1, .h2, .h3 {
+  color: #003366;
+}
+
+.ul {
+  list-style-type: none;
+}
+
+.ul .li {
+  padding: 5px 0;
+}
+
+.ul .li .a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.ul .li .a:hover {
+  text-decoration: underline;
+}
+
+/* Modal.module.css */
+.header {
+    background-color: #f8f9fa;
+    padding: 20px;
+    text-align: center;
+}
+
+.header h1 {
+    color: #6c757d;
+}
+
+.main {
+    margin: 20px;
+}
+
+.section {
+    margin-bottom: 20px;
+}
+
+.section h2 {
+    color: #007bff;
+}
+
+.section h3 {
+    color: #6c757d;
+}
+
+.section a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.section a:hover {
+    text-decoration: underline;
+}
+
+.section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.section li {
+    margin-bottom: 10px;
 }

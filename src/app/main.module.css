@@ -7,6 +7,7 @@
   width:100vw;
   height:100vh;
 }
+
 .container{
   min-height: 100vh;
   display: flex;
@@ -19,8 +20,8 @@
   flex-direction:column;
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.77);
-  flex:3;
   z-index:2;
+  width:380px;
 }
 
 .main_content{
@@ -114,22 +115,7 @@
   background-color: rgb(199, 5, 5);
 }
 
-.button {
-  padding-left:20px;
-  border-radius:3px;
-  border: 1px solid #c3dff5;
-  padding:20px;
-  text-align: left;
-  margin: 0px 20px 20px 20px;
-  text-align: center;
-  font-size: 18px;
-  margin-top: -10px;
-  position: relative;
-    cursor: pointer;
-    transition: 0.3s;
-  top: 32px;
-}
-.button:hover {
-  background-color: rgba(182, 39, 39, 0.85);
-  color: white;
+
+.hidden{
+  display: none;
 }
