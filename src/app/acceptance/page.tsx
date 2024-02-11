@@ -14,24 +14,53 @@ export default function Checklist() {
 
   const questions = [
     {
-      questionText: "beans", 
-      answerOptions: ["1","2"]
+      questionText: "Is your GPA higher than 3.5?", 
+      answerOptions: [
+        { answerText: "Yes", isCorrect: true },
+        { answerText: "No", isCorrect: false }
+      ]
+    },
+    {
+      questionText: "Is your SAT score above 120", 
+      answerOptions: [
+        { answerText: "Yes", isCorrect: true },
+        { answerText: "No", isCorrect: false }
+      ]
+    },
+    {
+      questionText: "Have you completed at least one AP class?", 
+      answerOptions: [
+        { answerText: "Yes", isCorrect: true },
+        { answerText: "No", isCorrect: false }
+      ]
+    },
+    {
+      questionText: "Is your GPA hier than 3.5?", 
+      answerOptions: [
+        { answerText: "Yes", isCorrect: true },
+        { answerText: "No", isCorrect: false }
+      ]
+    },
+    {
+      questionText: "Is your GPA hier than 3.5?", 
+      answerOptions: [
+        { answerText: "Yes", isCorrect: true },
+        { answerText: "No", isCorrect: false }
+      ]
     }
   ];
 
   const handleAnswerOptionClick = (isCorrect) => {
-    const handleAnswerOptionClick = (isCorrect) => {
-      if (isCorrect) {
-        setScore(score + 1);
-      }
-    
-      const nextQuestion = currentQuestion + 1;
-      if (nextQuestion < questions.length) {
-        setCurrentQuestion(nextQuestion);
-      } else {
-        setShowScore(true);
-      }
-    };
+    if (isCorrect) {
+      setScore(score + 1);
+    }
+  
+    const nextQuestion = currentQuestion + 1;
+    if (nextQuestion < questions.length) {
+      setCurrentQuestion(nextQuestion);
+    } else {
+      setShowScore(true);
+    }
   };
 
   return (

@@ -26,7 +26,7 @@ export const POST = async (request: any, context: any) => {
     const openai = new OpenAI();
     const chatCompletion = await openai.chat.completions.create({
       messages: messages, 
-      model: 'gpt-3.5-turbo',
+      model: 'gpt-4',
   });
 
     return NextResponse.json(chatCompletion)

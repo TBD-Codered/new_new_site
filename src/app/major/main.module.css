@@ -62,7 +62,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  text-sigze: 1.5em;
+  font-size: 1.5em;
 }
 .card_body{
   height:100px;
@@ -122,6 +122,6 @@
   font-size: 2.5em;
   color: #007bff;
   text-align: center;
-  margin-top: 50px;
-  margin-bottom: -250px;
+  margin-top: -90px;
+  margin-bottom: 0px;
 }
